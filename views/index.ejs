@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get A Joke</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <h1>Do you want a joke ?</h1>
+    <h2>Take it !</h2>
+
+    <form action="/joke" id="form" class="form" method="post">
+      <div class="divinline">
+        <div class="container">
+            <div class="col-md-8 container">
+                <p>If you want a special joke try this option.</p>
+            </div>
+          <div class="col-md-8 container">
+            <label for="category">Choose your category :</label>
+            <select class="form-select" name="category" id="category">
+              <option value="Any" data-display="Select">Random</option>
+              <option value="Programming">Programming</option>
+              <option value="Misc">Misc</option>
+              <option value="Dark">Dark</option>
+              <option value="Pun ">Pun</option>
+              <option value="Spooky">Spooky</option>
+              <option value="Christmas">Christmas</option>
+            </select>
+          </div>
+          <div class="col-md-8 container">
+            <label for="type">Choose your type :</label>
+            <select class="form-select" name="type" id="type">
+              <option value="" data-display="Select">Random</option>
+              <option value="single">Single</option>
+              <option value="twopart">Two Part</option>
+            </select>
+          </div>
+          <div class="container">
+            <button class="btn btn-light" type="submit">Joke!</button>
+          </div>
+          
+        </div>
+        <div>
+            <div class="container">
+                <p>Do you want more special joke?</p>
+            </div>
+            <div class="container col-md-8">
+                <label for="contains">Write something. </label>
+                <input class="form-control" type="text" name="contains" id="contains">
+            </div>
+            <div class="container">
+                <button class="btn btn-light" type="submit" formaction="/joke2">Joke!</button>
+            </div>
+        </div>
+      </div>
+    </form>
+
+    <% if(locals.category){ %> <% if(type == "single"){ %>
+    <p class="result-p"><%= joke %></p>
+    <% } else{ %>
+    <p class="result-p">- <%= setup %></p>
+    <p class="result-p">- <%= delivery %></p>
+    <% }} %>
+    <% if(locals.error){ %>
+    <p>No jokes were found that match your provided filter.</p>
+    
+    <% } %>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
