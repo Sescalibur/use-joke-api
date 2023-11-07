@@ -1,0 +1,57 @@
+h1{
+    color: white;
+    text-align: center;
+    font-family: 'Playpen Sans', cursive;
+    margin-top: 5vh;
+    font-size: 7vh;
+}
+h2{
+    color: white;
+    text-align: center;
+    font-family: 'Playpen Sans', cursive;
+    font-size: 6vh;
+}
+
+p{
+    color: white;
+    text-align: center;
+    font-size: 3.5vh;
+}
+button{
+    
+    width: 20vh;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+}
+label{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    
+}
+body{
+    background-image: url("../images/cool-background.png");
+}
+div * {
+    color: white;
+}
+.divinline{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 11vh;
+}
+.result-p{
+    font-size: 5vh;
+}
+.form-select{
+    color:black; 
+}
+option{
+    color: black;
+}
